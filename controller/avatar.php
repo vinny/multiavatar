@@ -63,7 +63,7 @@ class avatar
 			'Cache-Control' => 'public, max-age=86400',
 			'X-Content-Type-Options' => 'nosniff',
 		));
-		$response->setEtag(sha1($seed . ':' . $size));
+		$response->setEtag(hash('sha256', $seed . ':' . $size));
 
 		return $response;
 	}
