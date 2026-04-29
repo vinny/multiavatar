@@ -1,18 +1,17 @@
 {% if AVATAR_MULTIAVATAR_PREVIEW %}
 <dl>
 	<dt><label>{{ lang('MULTIAVATAR_PREVIEW') }}{{ lang('COLON') }}</label></dt>
-	<dd><img src="{{ AVATAR_MULTIAVATAR_PREVIEW|e('html_attr') }}" width="{{ AVATAR_MULTIAVATAR_WIDTH|e('html_attr') }}" height="{{ AVATAR_MULTIAVATAR_HEIGHT|e('html_attr') }}" alt="{{ lang('MULTIAVATAR_PREVIEW')|e('html_attr') }}" id="avatar_multiavatar_preview" /></dd>
-</dl>
-{% endif %}
-<dl>
-	<dt><label for="avatar_multiavatar_seed">{{ lang('MULTIAVATAR_SEED') }}{{ lang('COLON') }}</label><br /><span>{{ lang('MULTIAVATAR_SEED_EXPLAIN') }}</span></dt>
 	<dd>
-		<input type="text" name="avatar_multiavatar_seed" id="avatar_multiavatar_seed" value="{{ AVATAR_MULTIAVATAR_SEED|e('html_attr') }}" maxlength="80" class="inputbox autowidth" readonly="readonly" />
-		<button type="button" id="avatar_multiavatar_generate" class="button1" title="{{ lang('MULTIAVATAR_GENERATE')|e('html_attr') }}" aria-label="{{ lang('MULTIAVATAR_GENERATE')|e('html_attr') }}">
+		<img src="{{ AVATAR_MULTIAVATAR_PREVIEW|e('html_attr') }}" width="{{ AVATAR_MULTIAVATAR_WIDTH|e('html_attr') }}" height="{{ AVATAR_MULTIAVATAR_HEIGHT|e('html_attr') }}" alt="{{ lang('MULTIAVATAR_PREVIEW')|e('html_attr') }}" id="avatar_multiavatar_preview" />
+		<br><br>
+		<button type="button" id="avatar_multiavatar_generate" class="button2" title="{{ lang('MULTIAVATAR_GENERATE')|e('html_attr') }}" aria-label="{{ lang('MULTIAVATAR_GENERATE')|e('html_attr') }}">
 			<i class="icon fa-refresh fa-fw" aria-hidden="true"></i> {{ lang('MULTIAVATAR_GENERATE') }}
 		</button>
 	</dd>
 </dl>
+{% endif %}
+<input type="hidden" name="avatar_multiavatar_seed" id="avatar_multiavatar_seed" value="{{ AVATAR_MULTIAVATAR_SEED|e('html_attr') }}" />
+<br>
 <script>
 (function() {
 	var seedInput = document.getElementById('avatar_multiavatar_seed');

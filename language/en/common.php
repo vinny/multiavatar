@@ -23,10 +23,8 @@ $lang = array_merge($lang, array(
 	'ALLOW_MULTIAVATAR_EXPLAIN' => 'Allows users to generate deterministic SVG avatars with Multiavatar.',
 
 	'AVATAR_DRIVER_MULTIAVATAR_TITLE' => 'Multiavatar',
-	'AVATAR_DRIVER_MULTIAVATAR_EXPLAIN' => 'Generate a deterministic avatar from a seed.',
+	'AVATAR_DRIVER_MULTIAVATAR_EXPLAIN' => 'Generate a deterministic avatar.',
 
-	'MULTIAVATAR_SEED' => 'Seed',
-	'MULTIAVATAR_SEED_EXPLAIN' => 'This seed identifies the generated avatar. Use the button to generate another avatar.',
 	'MULTIAVATAR_GENERATE' => 'Generate another',
 	'MULTIAVATAR_PREVIEW' => 'Preview',
 
