@@ -1,0 +1,26 @@
+services:
+    vinny.multiavatar.generator:
+        class: vinny\multiavatar\service\generator
+        arguments:
+            - '%core.root_path%'
+
+    vinny.multiavatar.controller.avatar:
+        class: vinny\multiavatar\controller\avatar
+        arguments:
+            - '@vinny.multiavatar.generator'
+
+    vinny.multiavatar.avatar.driver.multiavatar:
+        class: vinny\multiavatar\avatar\driver\multiavatar
+        arguments:
+            - '@config'
+            - '@upload_imagesize'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '@path_helper'
+            - '@cache.driver'
+            - '@controller.helper'
+            - '@vinny.multiavatar.generator'
+        calls:
+            - [set_name, [avatar.driver.multiavatar]]
+        tags:
+            - { name: avatar.driver }

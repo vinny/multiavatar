@@ -1,0 +1,6 @@
+vinny_multiavatar_avatar:
+    path: /multiavatar/avatar/{token}/{size}.svg
+    defaults: { _controller: vinny.multiavatar.controller.avatar:display }
+    requirements:
+        token: '[A-Za-z0-9_-]+'
+        size: '\d+'
