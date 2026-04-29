@@ -5,7 +5,7 @@ Adds [Multiavatar](https://multiavatar.com) as a native phpBB avatar provider.
 ## Requirements
 
 - phpBB 3.3.0
-- PHP 7.2 or newer
+- PHP 7.4 or newer
 
 
 ## Support This Project
