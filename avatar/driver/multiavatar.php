@@ -177,6 +177,14 @@ class multiavatar extends driver
 	/**
 	 * {@inheritdoc}
 	 */
+	public function get_acp_template_name()
+	{
+		return '@vinny_multiavatar/ucp_avatar_options_multiavatar.html';
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
 	public function prepare_form_acp($user)
 	{
 		$user->add_lang_ext('vinny/multiavatar', 'common');
