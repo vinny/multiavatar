@@ -10,7 +10,7 @@ Adds [Multiavatar](https://multiavatar.com) as a native phpBB avatar provider.
 
 ## Support This Project
 
-If you find MobilePro useful and would like to support its continued development, consider buying me a coffee:
+If you find Multiavatar for phpBB useful and would like to support its continued development, consider buying me a coffee:
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/vinny1)
 
