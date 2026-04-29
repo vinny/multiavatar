@@ -26,6 +26,12 @@
 		"display-name": "Multiavatar",
 		"soft-require": {
 			"phpbb/phpbb": ">=3.3.0,<3.4.0"
-		}
+		},
+        "version-check": {
+            "host": "www.phpbb.com",
+            "directory": "/customise/db/extension/multiavatar",
+            "filename": "version_check",
+            "ssl": true
+        }
 	}
 }

@@ -16,6 +16,7 @@ use vinny\multiavatar\service\generator;
 class avatar
 {
 	const MAX_SEED_LENGTH = 80;
+	const MAX_TOKEN_LENGTH = 108;
 
 	/** @var generator */
 	protected $generator;
@@ -35,6 +36,11 @@ class avatar
 	 */
 	public function display($token, $size)
 	{
+		if (!$this->is_valid_token($token))
+		{
+			return new Response('', 404);
+		}
+
 		$seed = $this->decode_seed($token);
 		$size = max(1, min(512, (int) $size));
 
@@ -60,6 +66,11 @@ class avatar
 		$response->setEtag(sha1($seed . ':' . $size));
 
 		return $response;
+	}
+
+	protected function is_valid_token($token)
+	{
+		return $token !== '' && strlen($token) <= self::MAX_TOKEN_LENGTH && preg_match('#^[A-Za-z0-9_-]+$#', $token);
 	}
 
 	protected function is_valid_seed($seed)

@@ -124,7 +124,7 @@ class multiavatar extends driver
 
 		if ($seed === '')
 		{
-			$seed = $this->get_default_seed($user);
+			$seed = $this->get_default_seed($user, $row);
 		}
 
 		if (strlen($seed) > self::MAX_SEED_LENGTH)
@@ -206,13 +206,13 @@ class multiavatar extends driver
 			return $this->normalise_seed($row['avatar']);
 		}
 
-		return $this->get_default_seed($user);
+		return $this->get_default_seed($user, $row);
 	}
 
-	protected function get_default_seed($user)
+	protected function get_default_seed($user, $row = array())
 	{
-		$user_id = isset($user->data['user_id']) ? (int) $user->data['user_id'] : 0;
-		$username = isset($user->data['username_clean']) ? $user->data['username_clean'] : '';
+		$user_id = isset($row['id']) ? (int) $row['id'] : (isset($user->data['user_id']) ? (int) $user->data['user_id'] : 0);
+		$username = isset($row['username_clean']) ? $row['username_clean'] : (isset($user->data['username_clean']) ? $user->data['username_clean'] : '');
 
 		return $this->normalise_seed($username . '-' . $user_id);
 	}
