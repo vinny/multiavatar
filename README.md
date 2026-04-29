@@ -1,6 +1,7 @@
-# Multiavatar for phpBB
+# Multiavatar for phpBB [![Tests](https://github.com/vinny/multiavatar/actions/workflows/tests.yml/badge.svg)](https://github.com/vinny/multiavatar/actions/workflows/tests.yml)
 
 Adds [Multiavatar](https://multiavatar.com) as a native phpBB avatar provider.
+
 
 ## Requirements
 
