@@ -31,7 +31,15 @@ class multiavatar_test extends \PHPUnit\Framework\TestCase
 
 		$this->assertSame('multiavatar', $driver->get_config_name());
 		$this->assertSame('@vinny_multiavatar/ucp_avatar_options_multiavatar.html', $driver->get_template_name());
-		$this->assertSame('@vinny_multiavatar/ucp_avatar_options_multiavatar.html', $driver->get_acp_template_name());
+		$this->assertSame('@vinny_multiavatar/acp_avatar_options_multiavatar.html', $driver->get_acp_template_name());
+	}
+
+	public function test_driver_templates_exist()
+	{
+		$extension_root = realpath(__DIR__ . '/../../..');
+
+		$this->assertFileExists($extension_root . '/styles/all/template/ucp_avatar_options_multiavatar.html');
+		$this->assertFileExists($extension_root . '/adm/style/acp_avatar_options_multiavatar.html');
 	}
 
 	public function test_get_data_returns_route_and_dimensions()

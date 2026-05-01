@@ -43,7 +43,7 @@ class generator
 
 		if (!class_exists('\Multiavatar'))
 		{
-			throw new \RuntimeException('Multiavatar PHP library is not available.');
+			throw new \RuntimeException();
 		}
 
 		$multiavatar = new \Multiavatar();

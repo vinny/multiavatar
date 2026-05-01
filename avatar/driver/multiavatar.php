@@ -179,7 +179,7 @@ class multiavatar extends driver
 	 */
 	public function get_acp_template_name()
 	{
-		return '@vinny_multiavatar/ucp_avatar_options_multiavatar.html';
+		return '@vinny_multiavatar/acp_avatar_options_multiavatar.html';
 	}
 
 	/**
